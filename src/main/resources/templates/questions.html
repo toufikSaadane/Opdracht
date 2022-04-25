@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div class="container mt-5">
+  <div class="row justify-content-center align-content-center">
+    <hr>
+    <div class="col-sm-8 col-md-8 col-lg-4">
+      <br>
+      <form th:action="@{/answers}" th:object="${answers}" method="post" class="needs-validation">
+        <div class="mb-1">
+          <label class="fs-4 text-success" th:text="${question_one.question}"></label>
+          <select th:field="*{answer_one}">
+            <option value="">Select One Answer</option>
+            <option th:each="answer: ${question_one.answers}" th:value="${answer}"
+                    th:text="${answer}"></option>
+          </select>
+        </div>
+        <br>
+        <div class="mb-1">
+          <label class="fs-4 text-success" th:text="${question_two.question}"></label>
+          <select th:field="*{answer_two}">
+            <option value="">Select One Answer</option>
+            <option th:each="answer: ${question_two.answers}" th:value="${answer}"
+                    th:text="${answer}"></option>
+          </select>
+        </div>
+        <br>
+        <div class="mb-1">
+          <label class="fs-4 text-success" th:text="${question_three.question}"></label>
+          <select th:field="*{answer_three}">
+            <option value="">Select One Answer</option>
+            <option th:each="answer: ${question_three.answers}" th:value="${answer}"
+                    th:text="${answer}"></option>
+          </select>
+        </div>
+        <br>
+        <div class="mb-1">
+          <label class="fs-4 text-success" th:text="${question_four.question}"></label>
+          <select th:field="*{answer_four}">
+            <option value="">Select One Answer</option>
+            <option th:each="answer: ${question_four.answers}" th:value="${answer}"
+                    th:text="${answer}"></option>
+          </select>
+        </div>
+        <br>
+        <div class="mb-1">
+          <label class="fs-4 text-success" th:text="${question_five.question}"></label>
+          <select th:field="*{answer_five}">
+            <option value="">Select One Answer</option>
+            <option th:each="answer: ${question_five.answers}" th:value="${answer}"
+                    th:text="${answer}"></option>
+          </select>
+        </div>
+        <br>
+        <br>
+
+        <button class="btn btn-primary mt-1" type="submit">enquete</button>
+      </form>
+    </div>
+  </div>
+</div>
+</body>
+</html>
